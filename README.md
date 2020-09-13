@@ -27,6 +27,7 @@ $ npm run start:prod
 ```
 
 ## Running Test
+create test.env file
 
 ```bash
 npm run test
