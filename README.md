@@ -37,4 +37,4 @@ open `localhost:8080`
 
 ## Open swagger documentation
 
-open `localhost:3000/docs`
+open `https://bike-stations-snapshot.herokuapp.com/docs`
