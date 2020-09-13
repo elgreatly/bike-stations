@@ -1,5 +1,9 @@
 Bike Stations Service
 
+## Demo
+
+`https://bike-stations-snapshot.herokuapp.com/docs`
+
 ## Installation
 
 ```bash
