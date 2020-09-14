@@ -44,7 +44,7 @@ export class ConfigService {
             APP_PORT: Joi.number().default(4000),
             DB_CONNECTION: Joi.string(),
             DB_HOST: Joi.string(),
-            DB_PORT: Joi.number(),
+            DB_PORT: Joi.number().allow(''),
             DB_USERNAME: Joi.string().allow(''),
             DB_PASSWORD: Joi.string().allow(''),
             DB_DATABASE: Joi.string(),

@@ -12,7 +12,6 @@ const db = config.getString('DB_CONNECTION') + `://` + config.getString('DB_HOST
             user: config.getString('DB_USERNAME'),
             pass: config.getString('DB_PASSWORD'),
             dbName: config.getString('DB_DATABASE'),
-            authSource: config.getString('DB_DATABASE'),
             replicaSet: config.getString('DB_REPLICA_SET'),
             retryWrites: false,
             useNewUrlParser: true,
