@@ -102,7 +102,16 @@ describe('StationController Tests', () => {
 
   const weatherService: any = {
     getWeatherByCityName: (cityName: string) => {
-      return null;
+      return {
+          weather: [
+            {
+                id: 804,
+                main: 'Clouds',
+                description: 'overcast clouds',
+                icon: '04n',
+            },
+          ],
+      };
     },
   };
 
@@ -129,13 +138,14 @@ describe('StationController Tests', () => {
     const at = new Date('2020-09-10T05:22:40');
 
     const expectedStationId = 3004;
-    const expectedWeather = null;
+    const expectedWeatherId = 804;
     const expectedSnapshotDate = '2020-09-10T07:22:49';
+
     const snapshot = await stationController.getStationsSnapshot(at);
 
     expect(snapshot.at).toBe(expectedSnapshotDate);
     expect(snapshot.stations[0].id).toBe(expectedStationId);
-    expect(snapshot.weather).toBe(expectedWeather);
+    expect(snapshot.weather.weather[0].id).toBe(expectedWeatherId);
   });
 
   it('should throw NotFoundException if there is no snapshots when search for specific station id', async () => {
@@ -167,13 +177,14 @@ describe('StationController Tests', () => {
     const stationId = 3004;
 
     const expectedStationId = 3004;
-    const expectedWeather = null;
+    const expectedWeatherId = 804;
     const expectedSnapshotDate = '2020-09-10T07:22:49';
+
     const snapshot = await stationController.getStationByIdInSnapshot(stationId, at);
 
     expect(snapshot.at).toBe(expectedSnapshotDate);
     expect(snapshot.station.id).toBe(expectedStationId);
-    expect(snapshot.weather).toBe(expectedWeather);
+    expect(snapshot.weather.weather[0].id).toBe(expectedWeatherId);
   });
 
 });
